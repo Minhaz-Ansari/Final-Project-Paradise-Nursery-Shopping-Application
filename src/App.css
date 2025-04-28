@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.plant-card, .cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.plants-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  margin-top: 10px;
+}
