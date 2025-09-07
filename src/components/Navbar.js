@@ -10,7 +10,7 @@ const Navbar = () => {
       <Link to="/">Paradise Nursery</Link>
       <Link to="/products">Plants</Link>
       <Link to="/cart">
-        Cart ({totalItems})
+        <span className="cart-animated" role="img" aria-label="cart">🛒</span> ({totalItems})
       </Link>
     </nav>
   );

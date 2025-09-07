@@ -7,11 +7,20 @@ const ProductsPage = () => {
   const cartItems = useSelector(state => state.cart.cartItems);
   const categories = ['Aromatic', 'Medicinal', 'Ornamental'];
 
+  const categoryIcons = {
+    Aromatic: '🌿',
+    Medicinal: '💊',
+    Ornamental: '🌸',
+  };
+
   return (
     <div className="container mt-5">
       {categories.map((category) => (
         <div key={category}>
-          <h2 className="mb-4">{category} Plants</h2>
+          <h2 className="mb-4">
+            <span className="category-icon">{categoryIcons[category]}</span>
+            {category} Plants
+          </h2>
           <div className="row">
             {plantsData.filter(plant => plant.category === category).map((plant) => (
               <div className="col-md-4 mb-4" key={plant.id}>
