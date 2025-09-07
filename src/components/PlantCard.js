@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../cartSlice';
 
 const PlantCard = ({ plant, disabled }) => {
-  const { addToCart } = useContext(CartContext);
-
+  const dispatch = useDispatch();
   return (
     <div className="card h-100">
       <img src={plant.image} className="card-img-top" alt={plant.name} style={{ height: '200px', objectFit: 'cover' }} />
@@ -13,7 +13,7 @@ const PlantCard = ({ plant, disabled }) => {
         <button
           className="btn btn-success"
           disabled={disabled}
-          onClick={() => addToCart(plant)}
+          onClick={() => dispatch(addToCart(plant))}
         >
           {disabled ? "Added" : "Add to Cart"}
         </button>

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { plantsData } from '../data/plantsData';
 import PlantCard from '../components/PlantCard';
 
 const ProductsPage = () => {
-  const { cartItems } = useContext(CartContext);
-
-  const categories = ['Aromatic', 'Medicinal'];
+  const cartItems = useSelector(state => state.cart.cartItems);
+  const categories = ['Aromatic', 'Medicinal', 'Ornamental'];
 
   return (
     <div className="container mt-5">

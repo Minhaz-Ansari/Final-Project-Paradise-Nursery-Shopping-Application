@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const { getTotalItems } = useContext(CartContext);
-
+  const cartItems = useSelector(state => state.cart.cartItems);
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   return (
     <nav className="navbar">
       <Link to="/">Paradise Nursery</Link>
       <Link to="/products">Plants</Link>
       <Link to="/cart">
-        Cart ({getTotalItems()})
+        Cart ({totalItems})
       </Link>
     </nav>
   );
